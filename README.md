@@ -79,6 +79,13 @@ sudo hostnamectl set-hostname s3
 ```
 
 * Configuration de l'environnement
+
+Lors de l'installation du serveur on avait installé en meme temps le serveur openssh.
+Il faut ensuite changer le port 22 par défaut pour écouter sur le port 2223. et autoriser les connexion ssh avec cle public
+
+> [!NOTE]
+> Ce changement de port n'est pas indispensable c'est juste une recommendation de ne pas utiliser le port par défaut ssh.
+
 ```
                             ____ s1-db
                            /
@@ -86,11 +93,37 @@ central __ssh port 2223___/_____ s2
                           \
                            \____ s3
 ```
+* Autorisation connexion ssh sans password mais avec une cle public
 
->                             ____ s1-db\
->                            /\
-> central __ssh port 2223___/_____ s2\
->                           \\
->                            \\____ s3\
+Generer un ssh keygen
+```
+ssh-keygen -t rsa -b 4096
+```
+copier la cle publique vers le hote
+cas hote s1-db
+```
+ssh-copy-id -p 2223 user@10.10.10.2
+```
 
+cas hote s2
+```
+ssh-copy-id -p 2223 user@10.10.10.4
+```
+
+cas hote s3
+```
+ssh-copy-id -p 2223 user@10.10.10.4
+```
+
+* Droit et permission du user ansible: acces sudo sans passer par mot de passe.
+Sur les machines hotes s1-db, s2, s3
+on édite le sudoers en mode root
+```
+visudo
+```
+
+On va ajouter cette ligne a la fin sudoers
+```
+user ALL=(ALL) NOPASSWD:ALL
+```
 
