@@ -62,3 +62,36 @@ Pour la machine ansible engine on va changer le host s1 par central
 sudo hostnamectl set-hostname central
 ```
 
+Pour les machines Hosts
+Pour la machine s1-db
+```
+sudo hostnamectl set-hostname s1-db
+```
+
+Pour la machine s2
+```
+sudo hostnamectl set-hostname s2
+```
+
+Pour la machine s3
+```
+sudo hostnamectl set-hostname s3
+```
+
+* Configuration de l'environnement
+```
+                            ____ s1-db
+                           /
+central __ssh port 2223___/_____ s2
+                          \
+                           \____ s3
+
+```
+
+>                             ____ s1-db
+>                            /
+> central __ssh port 2223___/_____ s2
+>                           \
+>                            \____ s3
+
+
