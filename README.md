@@ -47,7 +47,7 @@ python3 get-pip.py
 ```
 python3 -m pip install ansible
 ```
-> [NOTE]
+> [!Tip]
 > J’ai dû créer une machine virtuelle avec les dernières mise à jour sans y installer d'autres paquets particuliers. 
 Ce VM sera cloner pour obtenir d’autres instances. Du coup on aura les mêmes instances basées sur le même système d’exploitation. 
 Je vais juste changer le hostname générique s1 par le host pour facilement s’y retrouver
