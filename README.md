@@ -85,13 +85,12 @@ sudo hostnamectl set-hostname s3
 central __ssh port 2223___/_____ s2
                           \
                            \____ s3
-
 ```
 
->                             ____ s1-db
->                            /
-> central __ssh port 2223___/_____ s2
->                           \
->                            \____ s3
+>                             ____ s1-db\
+>                            /\
+> central __ssh port 2223___/_____ s2\
+>                           \\
+>                            \\____ s3\
 
 
