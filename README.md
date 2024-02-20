@@ -18,23 +18,47 @@ Ansible permet de gérer **l’infrastructure avec du code (IaaC)**
 * Default ssh user: **user**
 * Default ssh port: **2223**
 ![](images/environnement.png)
+
 * Ansible version: **ansible[core 2.16.3]**
-> ![](images/ansible-version.png)
 ```
 ansible --version
 ```
-output
-```
-ansible [core 2.16.3]
-  config file = None
-  configured module search path = ['/home/user/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
-  ansible python module location = /home/user/.local/lib/python3.10/site-packages/ansible
-  ansible collection location = /home/user/.ansible/collections:/usr/share/ansible/collections
-  executable location = /home/user/.local/bin/ansible
-  python version = 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0] (/usr/bin/python3)
-  jinja version = 3.0.3
-  libyaml = True
-```
+> ![](images/ansible-version.png)
 
 ## LAB 1- Installation et configuration de l'environnement
+
+En fonction de l’OS serveur installé pour les récentes versions (Ubuntu version 18.xx et + ), 
+il y a déjà une version python v3.xx installée.
+
+* Vérifier la version de python installée
+```
+python3 -V
+```
+> Python 3.10.12
+
+* Installation de pip
+```
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+```
+```
+python3 get-pip.py
+```
+* Installation de ansible via pip
+```
+python3 -m pip install ansible
+```
+> [NOTE]
+J’ai dû créer une machine virtuelle avec les dernières mise à jour sans y installer d'autres paquets particuliers. 
+Ce VM sera cloner pour obtenir d’autres instances. Du coup on aura les mêmes instances basées sur le même système d’exploitation. 
+
+Je vais juste changer le hostname générique s1 par le host pour facilement s’y retrouver
+
+```
+hostnamectl
+```
+
+Pour la machine ansible engine on va changer le host s1 par central
+```
+sudo hostnamectl set-hostname central
+```
 
