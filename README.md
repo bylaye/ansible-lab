@@ -17,8 +17,9 @@ Ansible permet de gérer **l’infrastructure avec du code (IaaC)**
 * Username ansible: **user**
 * Default ssh user: **user**
 * Default ssh port: **2223**
+> [](images/environnement.png)
 * Ansible version: **ansible[core 2.16.3]**
-
+> [](images/ansible-version.png)
 ```
 ansible --version
 ```
