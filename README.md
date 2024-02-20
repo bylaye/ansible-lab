@@ -22,7 +22,8 @@ Ansible permet de gérer **l’infrastructure avec du code (IaaC)**
 ```
 ansible --version
 ```
->
+output
+```
 ansible [core 2.16.3]
   config file = None
   configured module search path = ['/home/user/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
@@ -32,6 +33,7 @@ ansible [core 2.16.3]
   python version = 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0] (/usr/bin/python3)
   jinja version = 3.0.3
   libyaml = True
+```
 
 ## LAB 1- Installation et configuration de l'environnement
 
